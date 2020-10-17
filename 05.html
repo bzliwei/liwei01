@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/   bootstrap.min.js"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+        </script>
+</head>
+<body>
+    <div class="container"> 
+        <form class="needs-validation" novalidate>
+            <div class="form-group">
+                <label for="userName">用户名</label>
+                <input type="text" name="userName" placeholder="请输入用户名" class="form-control" required pattern="\w">
+                <small class="form-text text-muted">用户名由6-20个字符组成</small>
+                <div class="valid-feedback">
+                    验证通过
+                </div>
+                <div class="invalid-feedback">
+                    验证不通过
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">手机号</label>
+                <input type="text" name="mobile" class="form-control" placeholder="请输入手机号" required pattern="^1[356789][0-9]{9}">
+                <small class="form-text text-muted">手机号由11位数字组成</small>
+            </div>
+
+            <div class="form-group">
+                <label for="name">姓名</label>
+                <input type="text" name="name" class="form-control" placeholder="请输入姓名" required >
+                <small class="form-text text-muted">范围1900 - 2020</small>
+            </div>
+
+            <div class="form-group">
+                <label for="birthday">出生年月</label>
+                <input type="data" name="birthday" class="form-control" placeholder="请输入出生日期" required >
+                <small class="form-text text-muted">范围1900 - 2020</small>
+            </div>
+
+            <div class="form-group">
+                <label for="address">地址</label>
+                <input type="text" name="birthday" class="form-control" placeholder="请输入地址" required >
+            </div>
+            <button type="submit" class="btn btn-primary">提交</button>
+          </form>
+    </div>
+      
+</body>
+</html>

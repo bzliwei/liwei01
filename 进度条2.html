@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        window.onload=function(){
+            document.getElementById("span").innerHTML = 0+"%";
+            document.getElementById("pro1").value =0;
+        }
+    </script>
+    <button id="btn1">开始</button>
+    <button id="btn2">结束</button>
+    <div>
+        当前进度：<span id="span">10%</span>
+        <progress id="pro1" max="100" value="0" ></progress>
+    </div>
+</body>
+</html>

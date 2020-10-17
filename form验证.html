@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/   bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <form class="needs-validation" novalidate>
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" name="username" placeholder="请输入用户名" class="form-control" required pattern="[\u4e00-\u9fa5]{2,4}">
+                <small class="form-text text-muted">请输入用户名</small>
+                <div class="valid-feedback">
+                    验证通过
+                </div>
+                <div class="invalid-feedback">
+                    验证失败，只能输入2-4位字符
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="username">手机号</label>
+                <input type="text" name="username" placeholder="请输入用户名" class="form-control" required>
+                <small class="form-text text-muted">请输入手机号</small>
+            </div>
+            <div class="form-group">
+                <label for="username">姓名</label>
+                <input type="text" name="username" placeholder="请输入用户名" class="form-control" required>
+                <small class="form-text text-muted">请输姓名</small>
+            </div>
+            <div class="form-group">
+                <label for="username">地址</label>
+                <input type="text" name="username" placeholder="请输入用户名" class="form-control" required>
+                <small class="form-text text-muted">请输入地址</small>
+            </div>
+            <div class="form-group">
+                <label for="username">年月</label>
+                <input type="data" name="username" placeholder="请输入用户名" class="form-control" required>
+                <small class="form-text text-muted">请输入年月</small>
+            </div>
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+        </script>
+
+    <script src="../jquery/jquery.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+    <script>
+        (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+            });
+        }, false);
+        })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form class="needs-validation" novalidate>
+            <div class="form-group">
+              <label for="userName">用户名</label>
+              <input type="text" class="form-control" id="userName" placeholder="请输入用户名" required pattern="[\u4e00-\u9fa5]{2,4}">
+              <small id="userName" class="form-text text-muted">请输入用户名</small>
+              <div class="valid-feedback">
+                  验证通过
+              </div>
+              <div class="invalid-feedback">
+                验证不通过
+            </div>
+            </div>
+            <div class="form-group">
+                <label for="num">电话号码</label>
+                <input type="text" class="form-control" id="num" placeholder="请输入电话号码" required pattern="[^[1][345678][0-9]$]">
+                <small id="num" class="form-text text-muted">请输入电话号码</small>
+              </div>
+              <div class="form-group">
+                <label for="Name">姓名</label>
+                <input type="text" class="form-control" id="Name" placeholder="请输入姓名" required>
+                <small id="Name" class="form-text text-muted">请输入姓名</small>
+              </div>
+              <div class="form-group">
+                <label for="address">地址</label>
+                <input type="text" class="form-control" id="address" placeholder="请输入地址" required>
+                <small id="address" class="form-text text-muted">请输入地址</small>
+              </div>
+              <div class="form-group">
+                <label for="data">日期</label>
+                <input type="data" class="form-control" id="data" placeholder="请输入出生日期" required>
+                <small id="data" class="form-text text-muted">请输入出生日期</small>
+              </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+</body>
+</html>

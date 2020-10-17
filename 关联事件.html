@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关联事件</title>
+    <script src="../4.JS框架技术/jQuery/jquery.js"></script>
+</head>
+<script>
+    window.onload = function () {
+        document.getElementById('btn1').onclick = function () {
+            alert(1);
+        }
+        $('#btn2').click(function () {
+            alert(2);
+        });
+
+        $('#btn2').bind('click', function () {
+            alert(2);
+        })
+    }
+</script>
+<body>
+    <button id="btn1">btn1</button>
+    <input type="button" value="btn2" id="btn2" />
+</body>
+</html>
